@@ -1,23 +1,29 @@
-import { gql, useQuery } from "@apollo/client";
+// import { gql, useQuery } from "@apollo/client";
+// import { Header } from "./components/Header";
+// import { Lesson } from "./components/Lesson";
+// import { Sidebar } from "./components/Sidebar";
+// import { Video } from "./components/Video";
 // import { useEffect } from "react";
 // import { client } from "./lib/appolo";
 
-const GET_LESSONS_QUERY = gql`
-  query {
-    lessons {
-      id
-      title
-    }
-  }
-`;
+import { Event } from "./pages/Event";
 
-interface Lesson {
-  id: string;
-  title: string;
-}
+// const GET_LESSONS_QUERY = gql`
+//   query {
+//     lessons {
+//       id
+//       title
+//     }
+//   }
+// `;
+
+// interface Lesson {
+//   id: string;
+//   title: string;
+// }
 
 function App() {
-  const { data } = useQuery<{ lessons: Lesson[] }>(GET_LESSONS_QUERY);
+  // const { data } = useQuery<{ lessons: Lesson[] }>(GET_LESSONS_QUERY);
   // useEffect(() => {
   //   client
   //     .query({
@@ -28,11 +34,20 @@ function App() {
   //     });
   // });
   return (
-    <ul>
-      {data?.lessons.map((lesson) => {
-        return <li key={lesson.id}>{lesson.title}</li>;
-      })}
-    </ul>
+    <>
+      <Event />
+    </>
+    // <div>
+    //   <Header />
+    //   <Sidebar />
+    //   <Video />
+    //   <Lesson />
+    // </div>
+    // <ul>
+    //   {data?.lessons.map((lesson) => {
+    //     return <li key={lesson.id}>{lesson.title}</li>;
+    //   })}
+    // </ul>
   );
 }
 

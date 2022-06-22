@@ -1,4 +1,4 @@
-#Bundling ambiente: Vite
+# Bundling ambiente: Vite
 
 npm create vite@latest
 name: event-platform
@@ -18,6 +18,11 @@ query / mutation
 query = buscar dados
 mutation = criar, alterar ou deletar dados
 
-requisicoes
+# Requisicoes
+
 npm i @apollo/client
 npm i graphql
+
+# Convert image SVG para (.jsx)
+
+https://svg2jsx.com/
