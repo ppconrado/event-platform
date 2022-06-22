@@ -26,3 +26,11 @@ npm i graphql
 # Convert image SVG para (.jsx)
 
 https://svg2jsx.com/
+
+# Icons
+
+npm i phosphor-react
+
+# Formatacao de Datas
+
+npm i date-fns
