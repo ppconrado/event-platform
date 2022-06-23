@@ -1,47 +1,51 @@
-# Bundling ambiente: Vite
+## Bundling ambiente: Vite
 
-## npm create vite@latest
+### npm create vite@latest
 
-## name: event-platform
+### name: event-platform
 
-## framework: react
+### framework: react
 
-## variant: react-ts
+### variant: react-ts
 
-## style:
+## Style:
 
-## npm i tailwindcss postcss autoprefixer -D
+### npm i tailwindcss postcss autoprefixer -D
 
-## npx tailwindcss init -p --> tailwind.config.js
+### npx tailwindcss init -p --> tailwind.config.js
 
-# CMS = Content Management System
+## CMS = Content Management System
 
-## Wordpress traz o painel ADMIN e a parte visual do front-end (temas)
+### Wordpress traz o painel ADMIN e a parte visual do front-end (temas)
 
-## Headless CMS (GraphCMS): Painel de ADMIN (dados fornecidos atraves de uma API REST ou GraphQL)
+### Headless CMS (GraphCMS): Painel de ADMIN (dados fornecidos atraves de uma API REST ou GraphQL)
 
-## React consome esta API do CMS
+### React consome esta API do CMS
 
-## query / mutation
+### query / mutation
 
-## query = buscar dados
+### query = buscar dados
 
-## mutation = criar, alterar ou deletar dados
+### mutation = criar, alterar ou deletar dados
 
-# Requisicoes
+## Requisicoes
 
-## npm i @apollo/client
+### npm i @apollo/client
 
-## npm i graphql
+### npm i graphql
 
-# Convert image SVG para (.jsx)
+## Convert image SVG para (.jsx)
 
-## https://svg2jsx.com/
+### https://svg2jsx.com/
 
-# Icons
+## Icons
 
-## npm i phosphor-react
+### npm i phosphor-react
 
-# Formatacao de Datas
+## Formatacao de Datas
 
-npm i date-fns
+### npm i date-fns
+
+## Videos
+
+### npm i @vime/core @vime/react --force
