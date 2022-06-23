@@ -48,4 +48,10 @@
 
 ## Videos
 
+### https://vimejs.com/
+
 ### npm i @vime/core @vime/react --force
+
+## Roteamento
+
+### npm i react-router-dom

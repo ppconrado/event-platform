@@ -6,7 +6,10 @@
 // import { useEffect } from "react";
 // import { client } from "./lib/appolo";
 
-import { Event } from "./pages/Event";
+import { ApolloProvider } from "@apollo/client";
+import { BrowserRouter } from "react-router-dom";
+import { client } from "./lib/appolo";
+import { Router } from "./Router";
 
 // const GET_LESSONS_QUERY = gql`
 //   query {
@@ -35,7 +38,11 @@ function App() {
   // });
   return (
     <>
-      <Event />
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </ApolloProvider>
     </>
     // <div>
     //   <Header />
