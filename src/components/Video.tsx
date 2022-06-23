@@ -1,20 +1,71 @@
 import { DefaultUi, Player, Youtube } from "@vime/react";
+import { gql, useQuery } from "@apollo/client";
 import {
   CaretRight,
   DiscordLogo,
   FileArrowDown,
   Lightning,
 } from "phosphor-react";
+
 import "@vime/core/themes/default.css";
 
-export function Video() {
+const GET_LESSON_BY_SLUG_QUERY = gql`
+  query GetLessonBySlug($slug: String) {
+    lesson(where: { slug: $slug }) {
+      title
+      videoId
+      description
+      teacher {
+        bio
+        avatarURL
+        name
+      }
+    }
+  }
+`;
+
+interface GetLessonsBySlugResponse {
+  lesson: {
+    title: string;
+    videoId: string;
+    description: string;
+    teacher: {
+      bio: string;
+      avatarURL: string;
+      name: string;
+    };
+  };
+}
+
+interface VideoProps {
+  lessonSlug: string;
+}
+
+export function Video(props: VideoProps) {
+  const { data } = useQuery<GetLessonsBySlugResponse>(
+    GET_LESSON_BY_SLUG_QUERY,
+    {
+      variables: {
+        slug: props.lessonSlug,
+      },
+    }
+  );
+
+  if (!data) {
+    return (
+      <div className="flex-1">
+        <p>Carregando...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="flex-1">
       {/* video player*/}
       <div className="bg-black flex justify-center">
         <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
           <Player>
-            <Youtube videoId="DZlYlBynNLE" />
+            <Youtube videoId={data.lesson.videoId} />
             <DefaultUi />
           </Player>
         </div>
@@ -24,26 +75,23 @@ export function Video() {
         <div className="flex items-start gap-16">
           <div className="flex-1">
             {/* titulo e descricao do video */}
-            <h1 className="text-2xl font-bold">
-              Aula 01 - 6 Essential Ableton Workflow Tips You Need to Know
-            </h1>
+            <h1 className="text-2xl font-bold">{data.lesson.title}</h1>
             <p className="mt-4 text-gray-200 leading-relaxed">
-              Workflow is so important to keep maintain productivity in our
-              production sessions. Here are my favourite workflow tips, and how
-              they can improve your efficiency in the DAW.
+              {data.lesson.description}
             </p>
             <div className="flex items-center gap-4 mt-6">
               <img
                 className="h-16 w-16 rounded-full border-2 border-blue-500"
-                src="https://github.com/ppconrado.png"
-                alt=""
+                src={data.lesson.teacher.avatarURL}
+                alt="avatar"
               />
               <div className="leading-relaxed">
                 <strong className="font-bold text-2xl block">
-                  Jose Paulo Conrado
+                  {data.lesson.teacher.name}
                 </strong>
+
                 <span className="text-gray-200 text-sm block">
-                  Sound Engineer
+                  {data.lesson.teacher.bio}
                 </span>
               </div>
             </div>
