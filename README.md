@@ -55,3 +55,9 @@
 ## Roteamento
 
 ### npm i react-router-dom
+
+### React Hook Form - not used
+
+## Style Logic
+
+### npm i classnames
