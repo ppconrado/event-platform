@@ -1,0 +1,16 @@
+schema: https://api-sa-east-1.graphcms.com/v2/cl4nnwbdk0i7e01xo9jdh2hb2/master
+
+documents: "./src/graphql/**/*.graphql"
+
+generates:
+  ./src/graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      reactApolloVersion: 3 # versao do apollo
+      withHooks: true # Gera hooks para cara requisicao
+      withHOC: false # Para React old school que utiliza classes
+      withComponent: false # NAO cria component para cada query/mutation
+

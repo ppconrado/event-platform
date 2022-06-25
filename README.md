@@ -61,3 +61,37 @@
 ## Style Logic
 
 ### npm i classnames
+
+## Integracao frontend e GraphQL API
+
+GraphQL Code Generator is a plugin-based tool that helps you get the best out of your GraphQL stack.
+
+From back-end to front-end, GraphQL Code Generator automates the generation of:
+
+Typed Queries, Mutations and, Subscriptions for React, Vue, Angular, Next.js, Svelte, whether you are using Apollo Client, URQL or, React Query.
+Typed GraphQL resolvers, for any Node.js (GraphQL Yoga, GraphQL Modules, TypeGraphQL or Apollo) or Java GraphQL server.
+Fully-typed Node.js SDKs, Apollo Android support, and more!
+
+Manually maintaining the GraphQL operation types or the complete absence of types can lead to many issues:
+
+outdated typing (regarding the current Schema)
+
+typos
+
+partial typing of data (not all Schema's fields has a corresponding type)
+
+The strength of your front-end application types is based on your data types. Any mistake on your manually maintained data types ripples in many of your components.
+
+For this reason, automating and generating the typing of your GraphQL operations will both improve the developer experience and stability of your stack.
+
+After installing and configuring GraphQL Code Generator, our front-end code will be fully-typed and up-to-date.
+
+### https://www.graphql-code-generator.com/
+
+### npm install @graphql-codegen/typescript-react-appolo -D
+
+### npm install @graphql-codegen/typescript @graphql-codegen/typescript-operations -D
+
+### npm install npm install @graphql-codegen/cli -D
+
+### npm run codegen --> src/graphql/generate.ts
