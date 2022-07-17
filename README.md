@@ -1,3 +1,7 @@
+
+![ppconrado github img](https://raw.githubusercontent.com/ppconrado/bds-assets/master/img/NLW-EVENTPLATFORM.png)
+![ppconrado github img](https://raw.githubusercontent.com/ppconrado/bds-assets/master/img/NLW-EVENTPLATFORM-VIDEOS.png)
+
 ## Bundling ambiente: Vite
 
 ### npm create vite@latest
